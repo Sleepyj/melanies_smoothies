@@ -9,6 +9,9 @@ st.write(
   """
 )
 
+cnx = st.connect("snowflake")
+session = cnx.session()
+
 name_input = st.text_input("Name on Smoothie:")
 st.write('The name on your Smoothie will be:', name_input)
 
@@ -16,8 +19,6 @@ st.write('The name on your Smoothie will be:', name_input)
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('Fruit_Name'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
 
-cnx = st.connect("snowflake")
-session = cnx.session()
 
 ingredient_list = st.multiselect(
     'Choose up to 5 ingredients:',
