@@ -9,7 +9,7 @@ st.write(
   """
 )
 
-cnx = st.connect("snowflake")
+cnx = st.connection("snowflake")
 session = cnx.session()
 
 name_input = st.text_input("Name on Smoothie:")
