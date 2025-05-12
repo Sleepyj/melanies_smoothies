@@ -12,7 +12,7 @@ st.write(
 name_input = st.text_input("Name on Smoothie:")
 st.write('The name on your Smoothie will be:', name_input)
 
-session = get_active_session()
+#session = get_active_session()
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('Fruit_Name'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
 
